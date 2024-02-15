@@ -18,7 +18,7 @@ export default async function (req, res) {
     }
     const url = req.method === "POST"
       ? `${process.env.API_URL}/resources`
-      : `${process.env.API_URL}/resources` + id
+      : `${process.env.API_URL}/resources/` + id
     try {
       const axiosRes = await axios[req.method.toLowerCase()](url, req.body);
       return res.send(axiosRes.data);
@@ -28,7 +28,7 @@ export default async function (req, res) {
   }
   if (req.method === "DELETE") {
     const resourceId = req.query.id;
-    const url = `${process.env.API_URL}/resources` + resourceId
+    const url = `${process.env.API_URL}/resources/` + resourceId
     try {
       const axiosRes = await axios.delete(url);
       return res.send(axiosRes.data);
