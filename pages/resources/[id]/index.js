@@ -79,7 +79,7 @@ const ResourceDetail = ({ resource }) => {
 }
 
 export async function getServerSideProps({ params }) {
-  const dataRes = await fetch(`http://localhost:3001/api/resources/${params.id}`);
+  const dataRes = await fetch(`${process.env.API_URL}/resources/${params.id}`);
 
   if (!dataRes.ok) {
     // Si la requête n'a pas abouti (statut HTTP différent de 200 OK)
