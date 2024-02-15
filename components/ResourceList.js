@@ -12,7 +12,7 @@ const ResourceList = ({ resources,filterText }) => {
                     {moment(resource.createdAt).format("LLL")}
                         <ResourceLabel status={resource.status} />
                     </h2>
-                    <h1 className="title has-text-black is-3">{resource.title}</h1>
+                    <h1 className="title is-3">{resource.title}</h1>
                     <p className="has-text-dark mb-2">{resource.description}</p>
                     <Link legacyBehavior href={`/resources/${resource.id}`}>
                           <a className="button is-light">
